@@ -1,3 +1,115 @@
-* {
-	font-family: "Helvetica";
+/*
+	GENERAL TEXT FORMATTING
+*/
+
+p, h1, h2, h3, h4, li, span {
+	font-family: 'Helvetica'
+}
+
+a {
+	color: rgba(113, 232, 223, 0.75);
+	text-decoration: none;
+}
+
+html {
+	background-color: #fefefe;
+}
+
+/*
+	MAIN WRAPPERS/CONTAINERS
+*/
+
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+.wrapper {
+	background-color: #efefef;
+	margin: 4em auto;
+	padding: 2em;
+}
+
+.checkbox-main-wrapper {
+	width: 100%;
+}
+
+.checkbox-wrapper {
+	width: 33%;
+	margin: 0 auto;
+	text-align: center;
+	padding: .4em;
+}
+
+.checkbox {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.checkbox span {
+	margin: auto;
+}
+
+/*
+	FOOTER
+*/
+
+.footer {
+	
+}
+
+.contact {
+	font-size: .8em;
+	text-align: right;
+}
+
+ul {
+	list-style: none;
+}
+
+/*
+	INPUTS
+*/
+
+input, textarea {
+	padding: .8em 1em;
+	border: none;
+	font-family: 'Helvetica';
+	font-size: 1em;
+	max-width: 100%;
+	width: 450px;
+	margin: 0 auto;
+}
+
+input:focus, button:focus, textarea:focus {
+	outline: 0;
+}
+
+.align-with-input {
+	width: 450px;
+	margin: 0 auto;
+}
+
+.selection-wrapper {
+	width: 100%;
+	display: flex;
+	margin-top: 1em;
+}
+
+button {
+	border: none;
+	font-family: 'Helvetica';
+	margin: 0em auto;
+	padding: 1em 3em;
+	border-radius: 5px;
+	font-size: .8em;
+	transition: .1s;
+}
+
+button:hover {
+	background-color: #dfdfdf;
+}
+
+button:active {
+	background-color: #bfbfbf;
 }

@@ -2,35 +2,82 @@
 <head>
 	<title>Text to String!</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script scr="js/app.js"></script>
 </head>
 <body>
-	
-	<script>
-		var b_s = 0;
-		var tab = 0;
-		var ret = 0;
-		
-		function convert() {
-			var s = document.getElementById('source').value;
-			s = s + " AND " + s;
-			document.getElementById('source').value = s;
-		}
-	</script>
-	<h2>asdfasdf</h2>
 	<div class="container">
-		<div class="main-wrapper">
+		<div class="wrapper">
 			<h2>Convert text to a string!</h2>
-			<textarea width="600" height="400" id="source"></textarea>
-			<button id="" onclick="convert">RUN</button>
-			<div class="result-wrapper">
-				<h4>This is the product:</h4>
-				<div id="result">
-					<script>
-						document.getElementById('source').value = '?';
-					</script>
+			<p>Converts a file, long string, etc that contains returns, quotation marks (") and tabs into a string that's safe to enter into code while not losing the formatting of the string.</p>
+<!--			<p>For those who are curious, stats exist at the bottom.</p>-->
+			<div class="selection-wrapper">
+				<textarea style="height: 200px;" id="source"></textarea>
+			</div>
+			<div class="selection-wrapper checkbox-main-wrapper">
+				<div class="checkbox-wrapper">
+					<input type="checkbox" checked="checked" name="character" id="ret" class="checkbox"><br><span>Format returns</span>
+				</div>
+				<div class="checkbox-wrapper">
+					<input type="checkbox" checked="checked" name="character" id="tab" class="checkbox"><br><span>Format tabs</span>
+				</div>
+				<div class="checkbox-wrapper">
+					<input type="checkbox" checked="checked" name="character" id="quotation" class="checkbox"><br><span>Format quotations</span>
 				</div>
 			</div>
+			<div class="selection-wrapper">
+				<button id="" onclick="convert()">RUN</button>
+			</div>
+			<div class="align-with-input">
+				<h4>Formatted string:</h4>
+			</div>
+			<div class="result-wrapper selection-wrapper">
+				<input id="result">
+			</div>
 		</div>
+		<footer class="footer wrapper">
+			<div class="contact">
+				<ul>
+					<li>A small project by Thomas H</li>
+					<a href="https://github.com/haxonek">
+						<li>GitHub</li>
+					</a>
+				</ul>
+			</div>
+		</footer>
 	</div>
+	<script>
+		function convert() {
+			var s = document.getElementById('source').value;
+			
+			if (document.getElementById("quotation").checked) {
+				s = s.replaceAll('"', '\\"');
+			}
+			if (document.getElementById("ret").checked) {
+				s = s.replaceAll('\n', '\\n');
+			}
+			if (document.getElementById("tab").checked) {
+				s = s.replace('\t', '\\t');
+			}
+			
+			document.getElementById('result').value = s;
+		}
+		
+		String.prototype.replaceAll = function(search, replacement) {
+			var target = this;
+			return target.replace(new RegExp(search, 'g'), replacement);
+		};
+		
+//		String.prototype.replaceAllnl = function(search, replacement) {
+//			var target = this;
+//			ret += 1;
+//			return target.replace(new RegExp(search, 'g'), replacement);
+//		};
+//		
+//		String.prototype.replaceAllTab = function(search, replacement) {
+//			var target = this;
+//			tab += 1;
+//			return target.replace(new RegExp(search, 'g'), replacement);
+//		};
+	</script>
 </body>
 </html>
