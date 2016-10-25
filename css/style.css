@@ -2,8 +2,18 @@
 	GENERAL TEXT FORMATTING
 */
 
+/*
+* {
+	border: 1px solid #333;
+}
+*/
+
 p, h1, h2, h3, h4, li, span {
-	font-family: 'Helvetica'
+	font-family: 'Noto Sans', 'Helvetica', sans-serif;
+}
+
+h2 {
+	font-size: 1.7em;
 }
 
 a {
@@ -21,7 +31,7 @@ html {
 
 .container {
 	width: 80%;
-	margin: auto;
+	margin: 0 auto;
 }
 
 .wrapper {
@@ -31,23 +41,25 @@ html {
 }
 
 .checkbox-main-wrapper {
-	width: 100%;
+	justify-content: space-around;
+	justify-content: -webkit-space-around;
+	width: 50%;
+	margin: 0 auto;
 }
 
 .checkbox-wrapper {
-	width: 33%;
-	margin: 0 auto;
-	text-align: center;
-	padding: .4em;
+	background-color: #dfdfdf;
+	padding: .4em 1.8em;
+	border-radius: 4px;
+	border: 2px solid #efefef;
 }
 
-.checkbox {
-	margin: 0 auto;
-	text-align: center;
+.checkbox, input[type="checkboxes"] {	
+	cursor: pointer;
 }
 
-.checkbox span {
-	margin: auto;
+label {
+	cursor: pointer;
 }
 
 /*
@@ -71,7 +83,8 @@ ul {
 	INPUTS
 */
 
-input, textarea {
+
+input[type="text"], textarea {
 	padding: .8em 1em;
 	border: none;
 	font-family: 'Helvetica';
