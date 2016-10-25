@@ -43,6 +43,7 @@ html {
 .checkbox-main-wrapper {
 	justify-content: space-around;
 	justify-content: -webkit-space-around;
+	display: flex;
 	width: 50%;
 	margin: 0 auto;
 }
